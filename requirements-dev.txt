@@ -1,0 +1,3 @@
+# Pour contribuer : dependances de l'outil, plus les tests.
+-r requirements.txt
+pytest>=8

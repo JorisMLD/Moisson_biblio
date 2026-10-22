@@ -1,0 +1,20 @@
+# Donnees personnelles : base, reglages (email, cle), digests, exports, PDF
+donnees/
+config.json
+*.db
+*.db-journal
+
+# Environnement Python
+.venv/
+venv/
+__pycache__/
+*.pyc
+.pytest_cache/
+*.egg-info/
+build/
+dist/
+
+# Systemes
+.DS_Store
+Thumbs.db
+desktop.ini

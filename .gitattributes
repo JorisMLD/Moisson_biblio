@@ -1,0 +1,5 @@
+# Fins de ligne adaptees a chaque lanceur, quel que soit le systeme du contributeur.
+*.bat     text eol=crlf
+*.sh      text eol=lf
+*.command text eol=lf
+*.py      text eol=lf

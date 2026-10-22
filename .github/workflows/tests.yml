@@ -1,0 +1,43 @@
+name: tests
+
+on: [push, pull_request]
+
+jobs:
+  tests:
+    strategy:
+      fail-fast: false
+      matrix:
+        os: [ubuntu-latest, windows-latest, macos-latest]
+        python: ["3.9", "3.13"]
+    runs-on: ${{ matrix.os }}
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: ${{ matrix.python }}
+      - run: python -m pip install -r requirements-dev.txt
+      - run: python -m pytest -q
+
+  lanceurs:
+    strategy:
+      fail-fast: false
+      matrix:
+        include:
+          - os: ubuntu-latest
+            lanceur: ./Veille-Linux.sh
+          - os: macos-latest
+            lanceur: ./Veille-Mac.command
+          - os: windows-latest
+            lanceur: .\Veille-Windows.bat
+    runs-on: ${{ matrix.os }}
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: premier lancement (installation)
+        run: ${{ matrix.lanceur }} --version
+      - name: installation de la base sans question
+        run: ${{ matrix.lanceur }} setup --no-prompt --email ci@example.org
+      - name: bilan
+        run: ${{ matrix.lanceur }} stats

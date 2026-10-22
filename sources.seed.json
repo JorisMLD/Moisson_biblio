@@ -1,0 +1,121 @@
+[
+  {
+    "name": "Annales de didactique et de sciences cognitives",
+    "connector": "oai",
+    "issn_print": "0987-7576",
+    "issn_online": "2804-2514",
+    "base_url": "https://metadata.openedition.org/oai",
+    "oai_set": "journals:adsc",
+    "enabled": 1,
+    "notes": "OpenEdition v2, OA sans embargo. Endpoint et setSpec confirmes."
+  },
+  {
+    "name": "Education et didactique",
+    "connector": "oai",
+    "issn_online": "2111-4838",
+    "base_url": "https://metadata.openedition.org/oai",
+    "oai_set": "journals:educationdidactique",
+    "enabled": 1,
+    "notes": "OpenEdition v2. Endpoint et setSpec confirmes. Verifier seulement une eventuelle barriere mobile sur les numeros recents."
+  },
+  {
+    "name": "Recherches en didactique des mathematiques",
+    "connector": "metadata",
+    "enabled": 1,
+    "notes": "Sur Episciences en acces ouvert depuis 2024, DOI Crossref en 10.46298/rdm. Moissonnee via Crossref par son eISSN. Les numeros anterieurs (La Pensee Sauvage) ne sont pas dans Crossref : non couverts.",
+    "issn_online": "2728-2422"
+  },
+  {
+    "name": "Revue de Mathematiques pour l'ecole (RMe)",
+    "connector": "oai",
+    "base_url": "https://www.rme.swiss/oai",
+    "enabled": 0,
+    "notes": "ex-Math-Ecole (Suisse romande). Inactive : entrepot OAI non confirme. Pour l'activer, tester l'adresse avec  python -m veille discover <url>."
+  },
+  {
+    "name": "Rematec",
+    "connector": "oai",
+    "base_url": "https://www.rematec.net.br/index.php/rematec/oai",
+    "enabled": 1,
+    "notes": "OJS, DOIs Crossref, OA. Endpoint OJS standard /oai ; pas de set (la revue est l'entrepot). Sert d'exemple de bout en bout."
+  },
+  {
+    "name": "Educational Studies in Mathematics",
+    "connector": "metadata",
+    "issn_print": "0013-1954",
+    "issn_online": "1573-0816",
+    "enabled": 1,
+    "notes": "Springer, paywall. Crossref pour metadonnees/references/resume, OpenAlex en repli pour le resume. Pas de PDF."
+  },
+  {
+    "name": "ZDM Mathematics Education",
+    "connector": "metadata",
+    "issn_print": "1863-9690",
+    "issn_online": "1863-9704",
+    "enabled": 1,
+    "notes": "Springer, paywall. Connecteur metadata."
+  },
+  {
+    "name": "Journal for Research in Mathematics Education",
+    "connector": "metadata",
+    "issn_print": "0021-8251",
+    "enabled": 1,
+    "notes": "NCTM. Connecteur metadata."
+  },
+  {
+    "name": "Journal of Mathematical Behavior",
+    "connector": "metadata",
+    "issn_print": "0732-3123",
+    "enabled": 1,
+    "notes": "Elsevier, paywall. Crossref depose rarement les resumes ; le repli OpenAlex les comblera en bonne partie."
+  },
+  {
+    "name": "For the Learning of Mathematics",
+    "connector": "scraper",
+    "issn_print": "0228-0671",
+    "base_url": "https://flm-journal.org/",
+    "enabled": 1,
+    "notes": "Scraper du numero courant (do=current). Texte integral payant (OA differe 3 ans), donc pas de PDF libre ; resume recupere sur la page do=details."
+  },
+  {
+    "name": "Petit x",
+    "connector": "scraper",
+    "base_url": "https://irem.univ-grenoble-alpes.fr/",
+    "consultation_path": "/revues/petit-x/consultation/",
+    "enabled": 1,
+    "notes": "Site IREM de Grenoble, sans API : lecture des pages (consultation, numeros, articles). Auteurs et PDF recuperes ; resume absent du site. Premier passage long (une page par article)."
+  },
+  {
+    "name": "Grand N",
+    "connector": "scraper",
+    "base_url": "https://irem.univ-grenoble-alpes.fr/",
+    "consultation_path": "/revues/grand-n/consultation/",
+    "enabled": 1,
+    "notes": "Site IREM de Grenoble, sans API : lecture des pages (consultation, numeros, articles). Auteurs et PDF recuperes ; resume absent du site. Premier passage long (une page par article)."
+  },
+  {
+    "name": "Reperes IREM",
+    "connector": "scraper",
+    "issn_online": "1760-6551",
+    "base_url": "https://irem.univ-grenoble-alpes.fr/",
+    "consultation_path": "/revues/reperes-irem/consultation-en-ligne/",
+    "enabled": 1,
+    "notes": "Site IREM de Grenoble, sans API : lecture des pages (consultation, numeros, articles). Auteurs et PDF recuperes ; resume absent du site. Premier passage long (une page par article)."
+  },
+  {
+    "name": "Asian Journal for Mathematics Education",
+    "connector": "metadata",
+    "issn_print": "2752-7263",
+    "issn_online": "2752-7271",
+    "enabled": 1,
+    "notes": "SAGE / East China Normal University, acces ouvert integral depuis 2022. Via Crossref ; PDF via OpenAlex."
+  },
+  {
+    "name": "New ICMI Study Series",
+    "connector": "metadata",
+    "issn_print": "1387-6872",
+    "issn_online": "2215-1745",
+    "enabled": 1,
+    "notes": "Serie d'ouvrages Springer (volumes des ICMI Studies, souvent en acces ouvert) : notices au grain du chapitre. Verifier avec  python -m veille check  que Crossref repond pour ces ISSN de serie ; si 0, la serie n'est pas filtrable par ISSN."
+  }
+]
