@@ -6,6 +6,7 @@ Aucune dependance reseau (la couche HTTP est remplacee par une fixture).
 
 import sys
 import tempfile
+from contextlib import closing
 from pathlib import Path
 
 sys.path.insert(0, str(Path(__file__).resolve().parents[1]))
@@ -98,8 +99,7 @@ def test_parse_and_pagination():
 
 
 def test_db_dedup():
-    with tempfile.TemporaryDirectory() as d:
-        conn = db.connect(Path(d) / "t.db")
+    with tempfile.TemporaryDirectory() as d, closing(db.connect(Path(d) / "t.db")) as conn:
         db.init_db(conn)
         sid = db.upsert_source(conn, name="Annales", connector="oai")
 
@@ -130,8 +130,7 @@ def test_db_dedup():
 
 def test_dedup_distinct_dois():
     """Deux notices de DOI differents mais de meme empreinte restent distinctes."""
-    with tempfile.TemporaryDirectory() as d:
-        conn = db.connect(Path(d) / "t.db")
+    with tempfile.TemporaryDirectory() as d, closing(db.connect(Path(d) / "t.db")) as conn:
         db.init_db(conn)
         sid = db.upsert_source(conn, name="Journal X", connector="metadata")
 
